@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-06T15:01:57 IST" name="Default suite" finished-at="2022-07-06T15:02:44 IST" duration-ms="47183">
+    <groups>
+    </groups>
+    <test started-at="2022-07-06T15:01:57 IST" name="Default test" finished-at="2022-07-06T15:02:44 IST" duration-ms="47183">
+      <class name="com.cde.dockethistory.StatusFilter">
+        <test-method is-config="true" signature="setupSuite(org.testng.ITestContext)[pri:0, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:01:55 IST" name="setupSuite" finished-at="2022-07-06T15:01:57 IST" duration-ms="1901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@29a33620]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method is-config="true" signature="reportHeader(java.lang.reflect.Method)[pri:0, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:01:57 IST" name="reportHeader" finished-at="2022-07-06T15:01:57 IST" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.cde.dockethistory.StatusFilter.verifyDocketHistoryPage() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportHeader -->
+        <test-method signature="verifyDocketHistoryPage()[pri:0, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:01:57 IST" name="verifyDocketHistoryPage" description="Verify Valid Docket History Page or not" finished-at="2022-07-06T15:02:16 IST" duration-ms="19374" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDocketHistoryPage -->
+        <test-method is-config="true" signature="reportHeader(java.lang.reflect.Method)[pri:0, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:02:16 IST" name="reportHeader" finished-at="2022-07-06T15:02:16 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.cde.dockethistory.StatusFilter.verifyStatusFilter() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportHeader -->
+        <test-method signature="verifyStatusFilter()[pri:1, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:02:16 IST" name="verifyStatusFilter" description="Verify Satatus Filter functionality" finished-at="2022-07-06T15:02:44 IST" duration-ms="27761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyStatusFilter -->
+        <test-method is-config="true" signature="getSummaryReport(org.testng.ITestContext)[pri:0, instance:com.cde.dockethistory.StatusFilter@27f981c6]" started-at="2022-07-06T15:02:44 IST" name="getSummaryReport" finished-at="2022-07-06T15:02:44 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@29a33620]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSummaryReport -->
+      </class> <!-- com.cde.dockethistory.StatusFilter -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
