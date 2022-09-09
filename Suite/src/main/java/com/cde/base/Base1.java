@@ -65,7 +65,7 @@ public class Base1
 			
 
 	@BeforeSuite(alwaysRun = true) 
-	public static void setupSuite(ITestContext ctx) throws Throwable {
+	public  void setupSuite(ITestContext ctx) throws Throwable {
 		itc=ctx;
 		String strBrowserType[];
 		Accessories.calculateSuiteStartTime();
@@ -105,10 +105,10 @@ public class Base1
 			}
 			else if(strBrowserType[i].toString().equalsIgnoreCase("chrome"))
 			{
-				System.setProperty("webdriver.chrome.driver",
-						  "C:\\Users\\630062\\Downloads\\chromedriver_win32\\chromedriver.exe"); 
+				System.setProperty("webdriver.chrome.driver",workingDir + "/downloads/chromedriver.exe"); 
 				 ChromeOptions options = new ChromeOptions();
 				 driver = new ChromeDriver(options);
+				 driver.manage().window().maximize();
 				i=i+1;
 				break;
 

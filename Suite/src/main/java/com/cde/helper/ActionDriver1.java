@@ -5,9 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver;import org.testng.ITestContext;
 
 import com.cde.base.Base1;
 
@@ -18,7 +19,11 @@ public class ActionDriver1 extends Base1{
 	 * @param url --Application url
 	 */
 	
-	public static void launchApplication(String url) { driver.get(url); }
+	
+	
+	public static void launchApplication(String url) { 
+		
+		driver.get(url); }
 	 
 	public static void getScreenshot(String path) throws Exception
 	 {
@@ -45,5 +50,12 @@ public class ActionDriver1 extends Base1{
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public void acceptalert() {
+		//acceptalrt.click();
+		
+		  Alert alert = driver.switchTo().alert(); alert.accept();
+		 
 	}
 }
