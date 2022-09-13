@@ -100,12 +100,7 @@ public class Login {
 			logout.click();
 		}
 		
-		public void acceptalert() {
-			//acceptalrt.click();
-			
-			  Alert alert = driver.switchTo().alert(); alert.accept();
-			 
-		}
+		
 		
 		
 }

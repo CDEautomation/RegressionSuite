@@ -7,17 +7,21 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DocketRequestPage {
+import com.cde.util.ICommonConstants;
+import com.cde.util.WebUtils;
+
+public class DocketRequestPage extends WebUtils {
 	WebDriver driver=null;
+	WebDriverWait wait;
 	public DocketRequestPage(WebDriver driver) { 
 		this.driver=driver;
 		PageFactory.initElements(this.driver, this);
-
+		wait=new WebDriverWait(driver, ICommonConstants.EXPLICIT_WAIT);
 	}
 	
-	WebDriverWait wait;
+
 	
-	@FindBy(xpath="//li[2][@id=\"admin-dropdown\"]")
+	@FindBy(xpath="//li[@id='admin-dropdown'][1]")
 	WebElement req;
 	
 	
@@ -27,8 +31,8 @@ public class DocketRequestPage {
 	
 	//a[@class='add-button btn btn-success']
 	
-	@FindBy(xpath="//a[@class='add-button btn btn-success']")
-	WebElement addBtn;
+	@FindBy(linkText="Add")
+	WebElement addbtn; 
 	
 	@FindBy(id="client")
 	WebElement clientcode;
@@ -62,42 +66,48 @@ public class DocketRequestPage {
 	WebElement submit;
 	
 	// This method is used to hover to Requests tab
-		public void moveToRequest() {
+		public void moveToRequest() throws Exception {
 			Actions act = new Actions(driver);
 			act.moveToElement(req).perform();
+			WebUtils.clickEventByUsingJavascriptExe(driver, wait, docketreq);
 		}
 		
 		//This method is used to validate Docket Request page with the help of title
 		public String validateDocketRequestPage() {
-			docketreq.click();
+			
 			return driver.getTitle();
 		}
 		
 		// This method is used to click on DocketRequest 
-		public void clickonDRP() {
-			Actions act = new Actions(driver);
-			act.moveToElement(req).perform();
-			docketreq.click();
+		public void clickonDRP() throws Exception {
+			//Actions act = new Actions(driver);
+			//act.moveToElement(docketreq).perform();
+			WebUtils.clickEventByUsingJavascriptExe(driver, wait, docketreq);
+			//docketreq.click();
+			//WebUtils.mouseHover(docketreq);
 		}
 		
 		// This method is used to click on add DocketRequest 
-		public void clickonAddDRP() {
-			
-			addBtn.click();
+		public void clickonAddDRP() throws Exception {
+			WebUtils.clickEventByUsingJavascriptExe(driver, wait, addbtn);
+			//addbtn.click();
 		}	
 	
 		
 		//This method is used to enter the client code
 		public void enterClient(String client_name) {
-			clientcode.clear();
-			clientcode.sendKeys(client_name);
+			//clientcode.clear();
+			//clientcode.sendKeys(client_name);
+			WebUtils.enterTextInTextBox(driver, wait, clientcode, client_name);
+			
 			
 		}
 		
 		//This method is used to enter the client code
 		public void enterCasenumber(String casenumber) {
-			casenum.clear();
-			casenum.sendKeys(casenumber);
+			//casenum.clear();
+			//casenum.sendKeys(casenumber);
+			WebUtils.enterTextInTextBox(driver, wait, casenum, casenumber);
 			
 		}	
 		

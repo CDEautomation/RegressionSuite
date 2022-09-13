@@ -3,8 +3,8 @@ package com.cde.pages;
 import java.util.List;
 import java.util.Scanner;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.By;
+/*//import org.apache.commons.lang3.RandomStringUtils;
+*/import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -222,25 +222,21 @@ public class Client {
 	}
 	
 	//These function is used to add the details of client(First name, Last name, email address)
-	public void addDetails() {
-		
-		F_Name = RandomStringUtils.randomAlphabetic(5);
-		ftrusteename.clear();
-		ftrusteename.sendKeys(F_Name);
-		
-		L_Name = RandomStringUtils.randomAlphabetic(5);
-		ltrusteename.clear();
-		ltrusteename.sendKeys(L_Name);
-		
-		trustee_email = "test"+RandomStringUtils.randomNumeric(5)+"@ecf.epiqsystems.com";
-		trustee_Email.clear();
-		trustee_Email.sendKeys(trustee_email);
-		
-		usingcde.click();
-		claimallowed.click();
-		acpallowed.click();
-		save.click();
-	}
+	/*
+	 * public void addDetails() {
+	 * 
+	 * F_Name = RandomStringUtils.randomAlphabetic(5); ftrusteename.clear();
+	 * ftrusteename.sendKeys(F_Name);
+	 * 
+	 * L_Name = RandomStringUtils.randomAlphabetic(5); ltrusteename.clear();
+	 * ltrusteename.sendKeys(L_Name);
+	 * 
+	 * trustee_email =
+	 * "test"+RandomStringUtils.randomNumeric(5)+"@ecf.epiqsystems.com";
+	 * trustee_Email.clear(); trustee_Email.sendKeys(trustee_email);
+	 * 
+	 * usingcde.click(); claimallowed.click(); acpallowed.click(); save.click(); }
+	 */
 	
 	
 	//This function is used to add the data into excel 
@@ -311,31 +307,23 @@ public class Client {
 	
 	
 	//These function is used to new add the client 
-	public String clientAdd() {
-		String ranstr = RandomStringUtils.randomAlphabetic(4);
-		exp_Name = "Ch13-ALNB-"+ranstr;
-		client_Search.sendKeys(exp_Name);
-		Filter.click();
-		List<WebElement> rows = driver.findElements(By.xpath("//*[@id=\"table-scroll\"]/table/tbody/tr"));
-		System.out.println("\nNumber of search client :==>> "+rows.size());
-		if(rows.size()==0) {
-			
-			add.click();
-			Select district_dropdown = new Select(districtDropdown);
-			district_dropdown.selectByValue("ALNB");
-			
-			Select client_dropdown = new Select(clientType);
-			client_dropdown.selectByVisibleText("Ch13");
-			clientname.sendKeys(exp_Name);
-			addDetails();
-			addDataExcel();
-			return exp_Name;
-		}else {
-			System.err.println("Already have an client with the same Client Code");
-		}
-		editClient.click();
-		return null;
-	}
+	/*
+	 * public String clientAdd() { śString ranstr =
+	 * RandomStringUtils.randomAlphabetic(4); exp_Name = "Ch13-ALNB-"+ranstr;
+	 * client_Search.sendKeys(exp_Name); Filter.click(); List<WebElement> rows =
+	 * driver.findElements(By.xpath("//*[@id=\"table-scroll\"]/table/tbody/tr"));
+	 * System.out.println("\nNumber of search client :==>> "+rows.size());
+	 * if(rows.size()==0) {
+	 * 
+	 * add.click(); Select district_dropdown = new Select(districtDropdown);
+	 * district_dropdown.selectByValue("ALNB");
+	 * 
+	 * Select client_dropdown = new Select(clientType);
+	 * client_dropdown.selectByVisibleText("Ch13"); clientname.sendKeys(exp_Name);
+	 * addDetails(); addDataExcel(); return exp_Name; }else {
+	 * System.err.println("Already have an client with the same Client Code"); }
+	 * editClient.click(); return null; }
+	 */
 
 
 	// These method is used to verify the added client details
@@ -350,20 +338,17 @@ public class Client {
 	}
 	
 	//These function is used to edit the existing client details
-	public String[] clientEdit() {
-		client_code = getClientCode();
-		System.out.println("Name of client code we are getting is :==>> "+client_code);
-		client_search.sendKeys(client_code);
-		Filter.click();
-		List<WebElement> rows = driver.findElements(By.xpath("//*[@id=\"table-scroll\"]/table/tbody/tr"));
-		System.out.println("\nNumber of search client :==>> "+rows.size());
-		editClient.click();		
-		addDetails();
-		String data[] = updateDataExcel();
-		return data;
-		
-	}
-	
+	/*
+	 * public String[] clientEdit() { client_code = getClientCode();
+	 * System.out.println("Name of client code we are getting is :==>> "+client_code
+	 * ); client_search.sendKeys(client_code); Filter.click(); List<WebElement> rows
+	 * = driver.findElements(By.xpath("//*[@id=\"table-scroll\"]/table/tbody/tr"));
+	 * System.out.println("\nNumber of search client :==>> "+rows.size());
+	 * editClient.click(); addDetails(); String data[] = updateDataExcel(); return
+	 * data;
+	 * 
+	 * }
+	 */
 	//These function is used to verify the details of edited client 
 	public String[] verifyEditedClient() {
 		returnToClientPage();
