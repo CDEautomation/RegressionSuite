@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="com.cde.home.Home"/>
+      <class name="com.cde.client.AddClient"/>
+      <class name="com.cde.client.DeleteClient"/>
+      <class name="com.cde.home.EditClient"/>
+      <class name="com.cde.docketrequest.DocketRequestCh13"/>
+      
+      <class name="com.cde.home.Home"/>
+      <class name="com.cde.home.Home"/>
+      <class name="com.cde.home.Home"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

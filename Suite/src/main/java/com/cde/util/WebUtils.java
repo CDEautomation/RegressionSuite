@@ -5,6 +5,8 @@ import java.io.StringWriter;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -58,6 +60,35 @@ public class WebUtils {
 			}
 		}
 		
+		public static void enterTextInTextBox(WebDriver driver, WebDriverWait wait, WebElement webEelement,
+				String textTobeSet) {
+			try {
+				WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webEelement));
+				element.clear();
+				element.sendKeys(textTobeSet);
+			} catch (StaleElementReferenceException e) {
+				WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webEelement));
+				element.sendKeys(textTobeSet);
+			}
+
+		}
+		
+		public static void clickEventByUsingJavascriptExe(WebDriver driver, WebDriverWait wait, WebElement webEelement)
+				throws Exception {
+
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.elementToBeClickable(webEelement));
+			// wait.until(ExpectedConditions.visibilityOf(webEelement));
+			try {
+				JavascriptExecutor ex = (JavascriptExecutor) driver;
+				ex.executeScript("arguments[0].click();", webEelement);
+			} catch (Exception e) {
+				// Thread.sleep(500);
+				e.printStackTrace();
+				webEelement.click();
+			}
+		}
+
 		
 
 

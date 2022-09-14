@@ -28,19 +28,22 @@ public class DocketRequestCh13 extends ActionDriver1{
 	}
 	@Test(priority=0,description = "Request with valid docket range")
 	public void validDocketRange() throws Throwable {
-		try {
+		/* try { */
 			
 	
-	//home=new Home();	
+	
 	drp=new DocketRequestPage(driver);
-	//home.verifyValidLogindetails();
 	
-	drp.clickonDRP();
-	
+	drp.moveToRequest();
+	//drp.clickonDRP();
+	 
 	Assert.assertEquals(drp.validateDocketRequestPage(), "Docket Requests - Court Data Exchange Admin");
+	
 	getScreenshot(System.getProperty("user.dir")+"\\successScreenshots\\Verifying DRP page.jpeg");
+	
 	Reporters.SuccessReport("DocketRequest", "User Verified Docket Request page Successfully");
 	drp.clickonAddDRP();
+	System.out.println("hello"); 
 	Xls_Reader reader = new Xls_Reader(System.getProperty("user.dir") + "/Testdata/TestInput.xlsx");
 	String cname = reader.getCellData("DocketRequest", "ClientName", 2);
 	String casenum = reader.getCellData("DocketRequest", "CaseNumber", 2);
@@ -53,10 +56,10 @@ public class DocketRequestCh13 extends ActionDriver1{
 	drp.checkUseTest();
 	drp.drpSubmit();
 	
-		}catch(Exception e) {
+		/*}catch(Exception e) {
 			getScreenshot(System.getProperty("user.dir")+"\\FailedScreenshots\\Add Drp failed.jpeg");
 			Reporters.failureReport("Verifying DRP with docket range", "Unable to add DRP script using valid docket range");
-		}
+		}*/
 		
 	}
 	
