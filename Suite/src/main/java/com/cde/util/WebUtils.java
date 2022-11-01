@@ -88,6 +88,12 @@ public class WebUtils {
 				webEelement.click();
 			}
 		}
+	// These method is used to select a dropdown menu with the help of given text 
+		public static void selectByText(WebElement element, String text) {
+			Select district_dropdown = new Select(element);
+			district_dropdown.selectByVisibleText(text);
+			
+		}
 
 		
 
